@@ -65,7 +65,7 @@
 </table>
 
 <hr />
-<asp:GridView ID="GridViewBeverages" runat="server" AutoGenerateColumns="False" DataKeyNames="ID"  DataSourceID="ManageBeverageEntityDataSource" AllowPaging="True" PageSize="3" OnPageIndexChanging="GridViewBeverages_PageIndexChanging">
+<asp:GridView ID="GridViewBeverages" runat="server" AutoGenerateColumns="False" DataKeyNames="ID"  AllowPaging="True" PageSize="3" OnPageIndexChanging="GridViewBeverages_PageIndexChanging">
     <Columns>
     <asp:TemplateField HeaderText="No.">
         <ItemTemplate>

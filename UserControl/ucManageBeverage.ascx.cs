@@ -13,19 +13,48 @@ namespace de1.UserControl
         {
             if (!IsPostBack) 
             {
-
+                BindGridView();
                 LoadBeverageCategories();
             }
         }
-
+        protected void BindGridView()
+        {
+            QLDoUongEntities context = new QLDoUongEntities();
+            var query = (from p in context.Beverages select p).ToList<Beverage>();
+            GridViewBeverages.DataSource = query;
+            GridViewBeverages.DataBind();
+        }
         protected void ButtonAddNew_Click(object sender, EventArgs e)
         {
+            string filename = "";
+            if (FileUploadPicture.HasFile)
+            {
+                filename = FileUploadPicture.FileName;
+                FileUploadPicture.SaveAs(Server.MapPath("~/images/Beverages/" + filename));
+            }
+
+            QLDoUongEntities context = new QLDoUongEntities();
+            Beverage p = new Beverage();
+
+            p.Name = TextBoxName.Text;
+            p.Price = decimal.Parse(TextBoxPrice.Text);
+            p.Description = TextBoxDescription.Text;
+            p.CatID = int.Parse(DropDownListCategory.Items[DropDownListCategory.SelectedIndex].Value);
+            p.ImageFilePath = filename;
+
+            context.Beverages.Add(p);
+            context.SaveChanges();
+
+            BindGridView(); // Cập nhật lại dữ liệu trong GridView
+            Page.Master.DataBind();
 
         }
 
         protected void GridViewBeverages_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
+            GridViewBeverages.PageIndex = e.NewPageIndex;
 
+            BindGridView();
         }
 
         private void LoadBeverageCategories()
