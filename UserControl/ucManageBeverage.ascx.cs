@@ -11,19 +11,33 @@ namespace de1.UserControl
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack) 
+            if (!IsPostBack)
             {
                 BindGridView();
-                LoadBeverageCategories();
+                BindDropDownList(); 
             }
         }
+
         protected void BindGridView()
         {
             QLDoUongEntities context = new QLDoUongEntities();
-            var query = (from p in context.Beverages select p).ToList<Beverage>();
-            GridViewBeverages.DataSource = query;
+            var query = (from p in context.Beverages select p).ToList();
+            GridViewBeverages.DataSource = query; 
             GridViewBeverages.DataBind();
         }
+
+        protected void BindDropDownList()
+        {
+            using (QLDoUongEntities context = new QLDoUongEntities())
+            {
+                DropDownListCategory.DataSource = context.Categories.ToList(); 
+                DropDownListCategory.DataTextField = "CatName"; 
+                DropDownListCategory.DataValueField = "CatID"; 
+                DropDownListCategory.DataBind();
+            }
+            DropDownListCategory.Items.Insert(0, new ListItem("-- Chọn loại đồ uống --", "")); 
+        }
+
         protected void ButtonAddNew_Click(object sender, EventArgs e)
         {
             string filename = "";
@@ -34,41 +48,26 @@ namespace de1.UserControl
             }
 
             QLDoUongEntities context = new QLDoUongEntities();
-            Beverage p = new Beverage();
-
-            p.Name = TextBoxName.Text;
-            p.Price = decimal.Parse(TextBoxPrice.Text);
-            p.Description = TextBoxDescription.Text;
-            p.CatID = int.Parse(DropDownListCategory.Items[DropDownListCategory.SelectedIndex].Value);
-            p.ImageFilePath = filename;
+            Beverage p = new Beverage
+            {
+                Name = TextBoxName.Text,
+                Price = decimal.Parse(TextBoxPrice.Text),
+                Description = TextBoxDescription.Text,
+                CatID = int.Parse(DropDownListCategory.SelectedValue), 
+                ImageFilePath = filename
+            };
 
             context.Beverages.Add(p);
             context.SaveChanges();
 
-            BindGridView(); // Cập nhật lại dữ liệu trong GridView
+            BindGridView(); 
             Page.Master.DataBind();
-
         }
 
         protected void GridViewBeverages_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             GridViewBeverages.PageIndex = e.NewPageIndex;
-
-            BindGridView();
+            BindGridView(); 
         }
-
-        private void LoadBeverageCategories()
-        {
-            using (QLDoUongEntities db = new QLDoUongEntities())
-            {
-                var categories = db.Categories.Select(c => c.CatName).ToList();
-
-                DropDownListCategory.DataSource = categories;
-                DropDownListCategory.DataBind();
-
-                DropDownListCategory.Items.Insert(0, new ListItem("-- Chọn loại đồ uống --", ""));
-            }
-        }
-
     }
 }

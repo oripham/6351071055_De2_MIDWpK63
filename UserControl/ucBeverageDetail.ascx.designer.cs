@@ -7,20 +7,29 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace de1
+namespace de1.UserControl
 {
 
 
-    public partial class Detail
+    public partial class ucBeverageDetail
     {
 
         /// <summary>
-        /// ucBeverageDetail control.
+        /// FormView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::de1.UserControl.ucBeverageDetail ucBeverageDetail;
+        protected global::System.Web.UI.WebControls.FormView FormView1;
+
+        /// <summary>
+        /// BeverageDetailEntityDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.EntityDataSource BeverageDetailEntityDataSource;
     }
 }

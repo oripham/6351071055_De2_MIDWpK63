@@ -123,6 +123,7 @@
     <Content Include="SearchBeverage.aspx" />
     <Content Include="service.aspx" />
     <Content Include="style.css" />
+    <Content Include="UserControl\ucBeverageDetail.ascx" />
     <Content Include="UserControl\ucBeverageListByCategory.ascx" />
     <Content Include="UserControl\ucCategoryList.ascx" />
     <Content Include="UserControl\ucManageBeverage.ascx" />
@@ -217,6 +218,13 @@
     </Compile>
     <Compile Include="service.aspx.designer.cs">
       <DependentUpon>service.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\ucBeverageDetail.ascx.cs">
+      <DependentUpon>ucBeverageDetail.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\ucBeverageDetail.ascx.designer.cs">
+      <DependentUpon>ucBeverageDetail.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserControl\ucBeverageListByCategory.ascx.cs">
       <DependentUpon>ucBeverageListByCategory.ascx</DependentUpon>

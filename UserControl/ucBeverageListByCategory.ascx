@@ -2,7 +2,7 @@
 <asp:ListView ID="ltvBeverageListByCategory" runat="server" DataKeyNames="ID" DataSourceID="BeverageListByCategoryEntityDataSource">
 
     <ItemTemplate>
-        <td style="text-align:center">
+        <td style="text-align:center" >
             <br />
             <asp:Label ID="lblBeverageName" runat="server" Text='<%# Eval("Name") %>' ForeColor="red"></asp:Label><br />
             <br />
