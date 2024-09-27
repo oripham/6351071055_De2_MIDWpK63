@@ -74,8 +74,40 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Category.aspx" />
+    <Content Include="Detail.aspx" />
     <Content Include="Global.asax" />
     <Content Include="home.aspx" />
+    <Content Include="images\Beverages\americano.jpg" />
+    <Content Include="images\Beverages\apple_juice.jpg" />
+    <Content Include="images\Beverages\banana_smoothie.jpg" />
+    <Content Include="images\Beverages\berry_smoothie.jpg" />
+    <Content Include="images\Beverages\black_tea.jpg" />
+    <Content Include="images\Beverages\cappuccino.jpg" />
+    <Content Include="images\Beverages\carrot_juice.jpg" />
+    <Content Include="images\Beverages\chai_latte.jpg" />
+    <Content Include="images\Beverages\chardonnay.jpg" />
+    <Content Include="images\Beverages\coca_cola.jpg" />
+    <Content Include="images\Beverages\dr_pepper.jpg" />
+    <Content Include="images\Beverages\espresso.jpg" />
+    <Content Include="images\Beverages\fanta.jpg" />
+    <Content Include="images\Beverages\gin_tonic.jpg" />
+    <Content Include="images\Beverages\green_smoothie.jpg" />
+    <Content Include="images\Beverages\green_tea.jpg" />
+    <Content Include="images\Beverages\heineken.jpg" />
+    <Content Include="images\Beverages\herbal_tea.jpg" />
+    <Content Include="images\Beverages\latte.jpg" />
+    <Content Include="images\Beverages\macchiato.jpg" />
+    <Content Include="images\Beverages\mango_smoothie.jpg" />
+    <Content Include="images\Beverages\margarita.jpg" />
+    <Content Include="images\Beverages\mixed_fruit_juice.jpg" />
+    <Content Include="images\Beverages\oolong_tea.jpg" />
+    <Content Include="images\Beverages\orange_juice.jpg" />
+    <Content Include="images\Beverages\pepsi.jpg" />
+    <Content Include="images\Beverages\pineapple_juice.jpg" />
+    <Content Include="images\Beverages\sprite.jpg" />
+    <Content Include="images\Beverages\strawberry_smoothie.jpg" />
+    <Content Include="images\Beverages\whiskey_sour.jpg" />
+    <Content Include="ManageBeverage.aspx" />
     <Content Include="ManageCategory.aspx" />
     <Content Include="ManageProduct.aspx" />
     <Content Include="QLDoUong.Context.tt">
@@ -88,10 +120,13 @@
       <DependentUpon>QLDoUong.edmx</DependentUpon>
       <LastGenOutput>QLDoUong.cs</LastGenOutput>
     </Content>
+    <Content Include="SearchBeverage.aspx" />
     <Content Include="service.aspx" />
     <Content Include="style.css" />
     <Content Include="UserControl\ucBeverageListByCategory.ascx" />
     <Content Include="UserControl\ucCategoryList.ascx" />
+    <Content Include="UserControl\ucManageBeverage.ascx" />
+    <Content Include="UserControl\ucSearchBeverage.ascx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -115,6 +150,13 @@
     <Compile Include="DefaultPageMaster.Master.designer.cs">
       <DependentUpon>DefaultPageMaster.Master</DependentUpon>
     </Compile>
+    <Compile Include="Detail.aspx.cs">
+      <DependentUpon>Detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Detail.aspx.designer.cs">
+      <DependentUpon>Detail.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -124,6 +166,13 @@
     </Compile>
     <Compile Include="home.aspx.designer.cs">
       <DependentUpon>home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageBeverage.aspx.cs">
+      <DependentUpon>ManageBeverage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageBeverage.aspx.designer.cs">
+      <DependentUpon>ManageBeverage.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageCategory.aspx.cs">
       <DependentUpon>ManageCategory.aspx</DependentUpon>
@@ -155,6 +204,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLDoUong.edmx</DependentUpon>
     </Compile>
+    <Compile Include="SearchBeverage.aspx.cs">
+      <DependentUpon>SearchBeverage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchBeverage.aspx.designer.cs">
+      <DependentUpon>SearchBeverage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="service.aspx.cs">
       <DependentUpon>service.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -175,6 +231,20 @@
     </Compile>
     <Compile Include="UserControl\ucCategoryList.ascx.designer.cs">
       <DependentUpon>ucCategoryList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\ucManageBeverage.ascx.cs">
+      <DependentUpon>ucManageBeverage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\ucManageBeverage.ascx.designer.cs">
+      <DependentUpon>ucManageBeverage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\ucSearchBeverage.ascx.cs">
+      <DependentUpon>ucSearchBeverage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\ucSearchBeverage.ascx.designer.cs">
+      <DependentUpon>ucSearchBeverage.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

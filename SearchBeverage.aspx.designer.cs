@@ -7,29 +7,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace de1.UserControl
+namespace de1
 {
 
 
-    public partial class ucBeverageListByCategory
+    public partial class SearchBeverage
     {
 
         /// <summary>
-        /// ltvBeverageListByCategory control.
+        /// ucSearchBeverage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView ltvBeverageListByCategory;
-
-        /// <summary>
-        /// BeverageListByCategoryEntityDataSource control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource BeverageListByCategoryEntityDataSource;
+        protected global::de1.UserControl.ucSearchBeverage ucSearchBeverage;
     }
 }
